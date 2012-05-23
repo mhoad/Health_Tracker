@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120523055419) do
+ActiveRecord::Schema.define(:version => 20120523131526) do
 
   create_table "entries", :force => true do |t|
     t.date     "date"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120523055419) do
     t.integer  "fitocracy_score"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
   create_table "roles", :force => true do |t|

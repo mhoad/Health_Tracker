@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = Entry.new(params[:entry].merge(:user_id => current_user.id))
 
     if @entry.save
       flash[:notice] = "Keep up the good work"
@@ -34,6 +34,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.paginate(:page => params[:page])
+    @user = current_user
   end
 
   def show
