@@ -1,6 +1,31 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<% if @user.entries.count < 30 %>
 
+  <div class="span8 well">
+    Hey there, thanks for checking out Health Tracker. We are still busy collecting your data so that we can show you some really cool stuff to get you motivated. In the mean time why don't you get started by entering your latest figures.
+  <p>
+    <div class="center">
+    <%= link_to 'Start Tracking', new_entry_path, html_options = { :class => "btn btn-success btn-large" } %> 
+    </div>
+  </p>    
+  <div class="progress progress-striped active">
+      <div class="bar" style="width: <%= (@user.entries.count / 40) + 10 %>%;"></div>
+    </div>
+  </div>
+  <div class="row offset1">
+  <div class="span3">
+    <h3>Fun Facts About You</h3>
+    <ul>
+      <li><b>Entries Logged:</b> <%= @user.entries.count %></li>
+      <li><b>Member Since:</b> <%= @user.created_at.to_date %></li>
+    </ul>
+  </div>
+  <div class="span3">
+    <h3>Fun Facts About Us</h3>
+    <ul>
+      <li><b>Total Members:</b> <%= @users.count %></li>
+      <li><b>Total Entries Logged:</b> <%= Entry.all.count %></li>
+    </ul>
+  </div>
+</div>
+<% end %>
 
