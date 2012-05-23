@@ -1,3 +1,16 @@
+<% if @entry.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error" style="width: 40%">
+      The form contains <%= pluralize(@entry.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @entry.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @entry do |f| %>
   <%= f.label :date %>:
   <%= f.text_field :date %>

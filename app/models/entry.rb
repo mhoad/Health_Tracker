@@ -23,7 +23,6 @@ class Entry < ActiveRecord::Base
   validates :muscle, presence: true
   validates :water, presence: true
   validates :weight, presence: true
-  validates :fitocracy_score, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
   def self.weight_on(date)
     where("date(date) = ?",date).sum(:weight)

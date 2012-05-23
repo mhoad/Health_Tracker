@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
 
     if @entry.save
-      flash[:success] = "Keep up the good work"
+      flash[:notice] = "Keep up the good work"
       redirect_to root_path
     else
       render 'new'
@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     
     if @entry.update_attributes(params[:entry])
-      flash[:success] = "Entry successfully edited"
+      flash[:notice] = "Entry successfully edited"
       redirect_to @entry
     else
       render 'edit'
@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
 
   def destroy
     Entry.find(params[:id]).destroy
-    flash[:success] = "Entry successfully deleted."
+    flash[:notice] = "Entry successfully deleted."
     redirect_to entries_path
   end
 
