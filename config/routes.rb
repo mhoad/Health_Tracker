@@ -1,4 +1,6 @@
 HealthTracker::Application.routes.draw do
+  resources :entries
+
   authenticated :user do
     root :to => 'home#index'
   end

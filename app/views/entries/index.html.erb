@@ -1,0 +1,35 @@
+<h1>Entries</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Body Weight</th>
+      <th>Fitocracy Score</th>
+      <th>Body Fat</th>
+      <th>Water</th>
+      <th>Muscle</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @entries.order("date DESC").each do |entry| %>
+    <tr>
+      <td><%= entry.date %></td>
+      <td><%= entry.weight %> kg</td>
+      <td><%= entry.fitocracy_score %> points</td>
+      <td><%= entry.body_fat %> %</td>
+      <td><%= entry.water %> %</td>
+      <td><%= entry.muscle %> %</td>
+      <td>
+        <%= link_to(entry, method: "delete") do %> 
+        <i class="icon-remove" title="Delete Entry"></i></a> 
+        <% end %>
+        
+        <%= link_to entry do %>
+        <i class="icon-search" title="View Stats"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

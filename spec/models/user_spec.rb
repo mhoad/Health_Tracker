@@ -120,21 +120,7 @@ describe User do
       end
     end
 
-    describe Users::OmniauthCallbacksController do
-
-      describe "Facebook" do
-
-        before(:each) do
-          request.env["devise.mapping"] = Devise.mappings[:user] 
-          request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
-        end
-
-        it "should be a redirect" do
-          get :facebook
-          response.should redirect_to(root_path)
-        end
-      end
-    end
+    
 
   end
 

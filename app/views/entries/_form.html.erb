@@ -1,0 +1,14 @@
+<%= form_for @entry do |f| %>
+  <%= f.datepicker 'date' %>
+  <%= f.label :body_fat %>:
+  <%= f.text_field :body_fat %>
+  <%= f.label :fitocracy_score %>:
+  <%= f.text_field :fitocracy_score %>
+  <%= f.label :muscle %>:
+  <%= f.text_field :muscle %>
+  <%= f.label :water %>:
+  <%= f.text_field :water %>
+  <%= f.label :weight %>:
+  <%= f.text_field :weight %>
+  <%= f.submit "Track", class: "btn btn-large btn-primary" %>
+<% end %>
