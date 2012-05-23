@@ -17,3 +17,5 @@ gem "bootstrap-sass", ">= 2.0.3"
 gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem "capybara", :group => [:development, :test]
+gem "omniauth-facebook"
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

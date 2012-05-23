@@ -38,4 +38,8 @@ HealthTracker::Application.configure do
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'example.com' }
 
+  # API Keys 
+  FACEBOOK_APP_ID="367958853250792"
+  FACEBOOK_APP_SECRET="2792ebcf1d1163788539266fbb729dc3"
+
 end
