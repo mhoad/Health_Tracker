@@ -1,0 +1,24 @@
+<%= render 'entries/charts/fat' %>
+<%= render 'entries/charts/fitocracy' %>
+<%= render 'entries/charts/muscle' %>
+<%= render 'entries/charts/water' %>
+<%= render 'entries/charts/weight' %>
+<div class="tabbable">
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#weight-chart" data-toggle="tab">Weight</a></li>
+    <li><a href="#fat-chart" data-toggle="tab">Body Fat</a></li>
+    <li><a href="#water-chart" data-toggle="tab">Body Water</a></li>
+    <li><a href="#muscle-chart" data-toggle="tab">Muscle Mass</a></li>
+    <li><a href="#fitocracy-chart" data-toggle="tab">Fitocracy Score</a></li>
+
+  </ul>
+   
+  <div class="tab-content">
+    <div id="weight-chart" class="index-chart tab-pane active"></div>
+    <div id="fat-chart" class="index-chart tab-pane"></div>
+    <div id="water-chart" class="index-chart tab-pane"></div>
+    <div id="muscle-chart" class="index-chart tab-pane"></div>
+    <div id="fitocracy-chart" class="index-chart tab-pane"></div>
+  </div>
+
+</div>

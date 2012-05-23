@@ -24,4 +24,25 @@ class Entry < ActiveRecord::Base
   validates :water, presence: true
   validates :weight, presence: true
   validates :fitocracy_score, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+
+  def self.weight_on(date)
+    where("date(date) = ?",date).sum(:weight)
+  end
+
+  def self.fat_percentage_on(date)
+    where("date(date) = ?",date).sum(:body_fat)
+  end
+
+  def self.muscle_percentage_on(date)
+    where("date(date) = ?",date).sum(:muscle)
+  end
+
+  def self.water_percentage_on(date)
+    where("date(date) = ?",date).sum(:water)
+  end
+
+  def self.fitocracy_score_on(date)
+    where("date(date) = ?",date).sum(:fitocracy_score)
+  end
+
 end

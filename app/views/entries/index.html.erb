@@ -1,4 +1,6 @@
-<h1>Entries</h1>
+<%= render 'entries/charts/chart_index' %>
+
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -14,7 +16,7 @@
   <tbody>
     <% @entries.order("date DESC").each do |entry| %>
     <tr>
-      <td><%= entry.date %></td>
+      <td><%= entry.date.to_formatted_s(:rfc822)  %></td>
       <td><%= entry.weight %> kg</td>
       <td><%= entry.fitocracy_score %> points</td>
       <td><%= entry.body_fat %> %</td>

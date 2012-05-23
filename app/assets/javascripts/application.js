@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
+//= require highcharts
 //= require_tree .
+
+$(function (){
+ $('#entry_date').datepicker({ dateFormat: 'dd/mm/yy' });
+ });

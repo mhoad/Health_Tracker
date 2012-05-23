@@ -21,4 +21,3 @@ gem "capybara", :group => [:development, :test]
 
 gem "omniauth-facebook"
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-gem 'jquery_datepicker'

@@ -1,5 +1,6 @@
 <%= form_for @entry do |f| %>
-  <%= f.datepicker 'date' %>
+  <%= f.label :date %>:
+  <%= f.text_field :date %>
   <%= f.label :body_fat %>:
   <%= f.text_field :body_fat %>
   <%= f.label :fitocracy_score %>:
